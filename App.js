@@ -4,7 +4,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import QrCodeCamera from "./src/QrCodeCamera";
 import Home from "./src/Home";
 import MCIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import ScreenScan from './src/ScreenScan';
+import Scan from './src/Scan';
 
 
 const Tab = createBottomTabNavigator();
@@ -18,8 +19,9 @@ export default function App() {
           activeTintColor: '#2BDA8E',
           inactiveTintColor: 'gray',}}
         >
-        <Tab.Screen name="Home" component={Home} options={{title:'Trang chủ'}} />
-        <Tab.Screen name="Scan" component={QrCodeCamera} options={{title:'ScanQR'}} />
+        {/* <Tab.Screen name="Home" component={Home} options={{title:'Trang chủ'}} /> */}
+        <Tab.Screen name="Scan" component={ScreenScan} options={{title:'ScanQR'}} />
+        <Tab.Screen name="Home" component={Home} options = {{title:'Trang chủ'}} />
       </Tab.Navigator>
     </NavigationContainer>
   );

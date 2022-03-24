@@ -4,16 +4,21 @@ import {View, Dimensions, Text, TouchableOpacity} from "react-native";
 import QRCodeScanner from "react-native-qrcode-scanner";
 import Icon from "react-native-vector-icons/Ionicons";
 import * as Animatable from "react-native-animatable";
+import { useEffect } from "react/cjs/react.production.min";
 
 const SCREEN_HEIGHT = Dimensions.get("window").height;
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
 console.disableYellowBox = true;
 function QrCodeCamera({navigation}) {
+
+  
+
    const onSuccess = (e) => {
     if(e){
       navigation.navigate('Home', {
-        itemId: e
+        itemId: e,
+
       })
     } else {
       alert("Lỗi khi quét QR");
@@ -71,7 +76,9 @@ function QrCodeCamera({navigation}) {
             </View>
 
             <View style={styles.bottomOverlay} >
-            <TouchableOpacity style={styles.buttonTouchable}>
+            <TouchableOpacity 
+             
+              style={styles.buttonTouchable}>
               <Text style={styles.buttonText}>Quét QRCode</Text>
             </TouchableOpacity>
             </View>

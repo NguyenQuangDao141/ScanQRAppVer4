@@ -15,11 +15,11 @@ const HEIGHT = Dimensions.get('window').height;
 export default function Home({route, navigation }) {
   let itemId
   if(route.params===undefined){
-    alert(`Vui lòng quét mã QR...`);
+    // alert(`Vui lòng quét mã QR...`);
     navigation.navigate('Scan')
   } else {
     // alert(`Thông tin bệnh nhân sẽ được hiển thị`)
-    itemId = route.params.itemId.data
+    itemId = route.params.result.data
   }
   const rootRef = firebase.database().ref();
   const animal = rootRef.child(`${itemId}`);
